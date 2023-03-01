@@ -76,9 +76,26 @@ class Solution:
             if value>1:
                 print(key)
 
-    # def isValid(self, s: str) -> bool:
+    def isValid(self, s: str) -> bool:
+        # while '()' in s or '[]'in s or '{}' in s:
+        #     s = s.replace('()', '')
+        #     s = s.replace('{}', '')
+        #     s = s.replace('[]', '')
+        # if len(s)==0:
+        #     return True
+        # return False
+        stack = []
+        bracket_pair = {"(":")","{":"}","[":"]"} 
+        for bracket in s:
+            if bracket in bracket_pair:
+                stack.append(bracket) 
+            elif len(stack)==0 or bracket!=bracket_pair[stack.pop()]:
+                return False
 
-    
+        return(len(stack) == 0)        
+
+
+                   
         
         
         
@@ -100,5 +117,7 @@ t = "car"
 s = "AseemSreeraj"
 # print(result.isAnagram(s,t))
 print(result.print_duplicate(s.lower()))
+
+allowed_bracket = '()[]{}'
 
 
