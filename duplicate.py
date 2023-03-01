@@ -75,6 +75,14 @@ class Solution:
         for key, value in count_s.items():
             if value>1:
                 print(key)
+    
+    def removeConsecutiveCharacter(self, S):
+        ans=""
+        ans+=S[0]
+        for i in range(1,len(S)):
+            if S[i-1]!=S[i]:
+                ans+=S[i]
+        return ans
 
     def isValid(self, s: str) -> bool:
         # while '()' in s or '[]'in s or '{}' in s:
@@ -100,24 +108,24 @@ class Solution:
         
         
            
-
-A = (3 ,1 ,2 ,5 ,3)
-nums = [1,2,3,5,4]
 result = Solution()
-s = "A man, a plan, a canal: Panama"
+# A = (3 ,1 ,2 ,5 ,3)
+# nums = [1,2,3,5,4]
+# s = "A man, a plan, a canal: Panama"
 # print(result.repeatedNumber(A))    
 # print(result.containsDuplicate(nums)) 
 # nums =  [5,4,-1,7,8]      
 # print(result.maxSubArray(nums)) 
 # print(result.isPalindrome(s))
-s = "anagram"
-t = "nagaram"
-s = "rat"
-t = "car"
-s = "AseemSreeraj"
+# s = "anagram"
+# t = "nagaram"
+# s = "rat"
+# t = "car"
+# s = "AseemSreeraj"
 # print(result.isAnagram(s,t))
-print(result.print_duplicate(s.lower()))
+# print(result.print_duplicate(s.lower()))]
 
-allowed_bracket = '()[]{}'
+S = "aabaa"
+print(result.removeConsecutiveCharacter(S))
 
 
