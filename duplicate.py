@@ -83,6 +83,23 @@ class Solution:
             if S[i-1]!=S[i]:
                 ans+=S[i]
         return ans
+    
+    def longestCommonPrefix(self, strs: list[str]) -> str:
+        strs.sort()
+        str1 = strs[0]
+        str2 = strs[-1]
+        index = 0
+        while(index<len(str1)):
+            if (str1[index]==str2[index]):
+                index+=1
+            else:
+                break
+
+        if index==0:
+            return ""
+        return str1[0:index]               
+
+
 
     def isValid(self, s: str) -> bool:
         # while '()' in s or '[]'in s or '{}' in s:
@@ -125,7 +142,10 @@ result = Solution()
 # print(result.isAnagram(s,t))
 # print(result.print_duplicate(s.lower()))]
 
-S = "aabaa"
-print(result.removeConsecutiveCharacter(S))
+# S = "aabaa"
+# print(result.removeConsecutiveCharacter(S))
+
+strs = ["dog","racecar","car"]
+print(result.longestCommonPrefix(strs))
 
 
