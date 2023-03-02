@@ -117,7 +117,26 @@ class Solution:
             elif len(stack)==0 or bracket!=bracket_pair[stack.pop()]:
                 return False
 
-        return(len(stack) == 0)        
+        return(len(stack) == 0)      
+
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
+        n=len(nums)
+        left_pr=[1]*n
+        right_pr=[1]*n
+        product_array = []
+        for i in range(1,n):
+            left_pr[i] = left_pr[i-1]*nums[i-1]
+            right_pr[i] = nums[::-1][i-1]*right_pr[i-1]
+            print("left =",left_pr[i],"right=",right_pr[i]," nums",nums[i-1])
+        for i in range(n):
+            product_array.append(left_pr[i]*right_pr[::-1][i])  
+        return product_array    
+
+            
+
+
+
+
 
 
                    
@@ -145,7 +164,8 @@ result = Solution()
 # S = "aabaa"
 # print(result.removeConsecutiveCharacter(S))
 
-strs = ["dog","racecar","car"]
-print(result.longestCommonPrefix(strs))
+# strs = ["dog","racecar","car"]
+# print(result.longestCommonPrefix(strs))
 
-
+nums=[1,2,3,4]
+print(result.productExceptSelf(nums))
