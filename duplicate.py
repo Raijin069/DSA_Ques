@@ -135,6 +135,8 @@ class Solution:
             product_after_current*=nums[i]
 
         return res     
+        
+        
         # n=len(nums)
         # left_pr=[1]*n
         # right_pr=[1]*n
@@ -162,23 +164,37 @@ class Solution:
         
            
 result = Solution()
+
 # A = (3 ,1 ,2 ,5 ,3)
+
 # nums = [1,2,3,5,4]
+
 # s = "A man, a plan, a canal: Panama"
+
 # print(result.repeatedNumber(A))    
+
 # print(result.containsDuplicate(nums)) 
+
 # nums =  [5,4,-1,7,8]      
+
 # print(result.maxSubArray(nums)) 
+
 # print(result.isPalindrome(s))
+
 # s = "anagram"
 # t = "nagaram"
+
 # s = "rat"
 # t = "car"
+
 # s = "AseemSreeraj"
+
 # print(result.isAnagram(s,t))
+
 # print(result.print_duplicate(s.lower()))]
 
 # S = "aabaa"
+
 # print(result.removeConsecutiveCharacter(S))
 
 # strs = ["dog","racecar","car"]
