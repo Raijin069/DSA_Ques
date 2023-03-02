@@ -7,6 +7,7 @@ def keypad_char(s):
          "7", "77", "777", "7777",
          "8", "88", "888", "8888",
          "9", "99", "999", "9999"]
+
     answer = ""
     # nonchar_dict = {"1":"1", "0":"0", "*":"*", "#":"#"}
     nonchar_dict = {i:i for i in ("1","0","*","#")} 
@@ -19,6 +20,8 @@ def keypad_char(s):
         else:
             answer += str[alpha_dict[i]]
     return answer
+
+
 s="GEEKSFORGEEKS"
 print(keypad_char(s))
 
