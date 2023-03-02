@@ -120,18 +120,35 @@ class Solution:
         return(len(stack) == 0)      
 
     def productExceptSelf(self, nums: list[int]) -> list[int]:
-        n=len(nums)
-        left_pr=[1]*n
-        right_pr=[1]*n
-        product_array = []
-        for i in range(1,n):
-            left_pr[i] = left_pr[i-1]*nums[i-1]
-            right_pr[i] = nums[::-1][i-1]*right_pr[i-1]
-            print("left =",left_pr[i],"right=",right_pr[i]," nums",nums[i-1])
-        for i in range(n):
-            product_array.append(left_pr[i]*right_pr[::-1][i])  
-        return product_array    
+        n = len(nums)
+        res = [1]*n
+        product_before_current = 1
+        product_after_current = 1
 
+        for i in range(n):
+            res[i]=product_before_current
+            product_before_current*=nums[i]
+
+        
+        for i in range(n-1,-1,-1):
+            res[i]*=product_after_current
+            product_after_current*=nums[i]
+
+        return res     
+        # n=len(nums)
+        # left_pr=[1]*n
+        # right_pr=[1]*n
+        # product_array = []
+        # for i in range(1,n):
+        #     left_pr[i] = left_pr[i-1]*nums[i-1]
+        #     right_pr[i] = nums[::-1][i-1]*right_pr[i-1]
+        #     print("left =",left_pr[i],"right=",right_pr[i]," nums",nums[i-1])
+        # for i in range(n):
+        #     product_array.append(left_pr[i]*right_pr[::-1][i])  
+        # return product_array   
+         
+
+        
             
 
 
