@@ -21,7 +21,7 @@ def getFloorAndCeil(arr, n, x):
     else:
         return (floor,-1)
 
-n = 8, x = 7
+n, x = 8, 7
 arr = [5, 6, 8, 9, 6, 5, 5, 6]
-print(getFloorAndCeil(arr, n, x))
+print(*getFloorAndCeil(arr, n, x))
 
