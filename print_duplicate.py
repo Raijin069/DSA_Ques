@@ -10,5 +10,6 @@ def print_duplicate(s:str):
     print(ans)
     
 s="geeksforgeeks"
-print_duplicate(s)            
+print_duplicate(s)  
+          
     
