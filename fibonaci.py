@@ -13,7 +13,7 @@ def fib(n):
     return fib(n-1) + fib(n-2)    
 
 
-n=950
+n=50
 dp = [-1]*(n+1)
 # for i in range(n+1):
 #     print(i , " = ",fib_dp(i,dp))  
