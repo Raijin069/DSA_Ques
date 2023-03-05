@@ -1,12 +1,20 @@
-def fib(n:int,dp:dict)->int:
+def fib_dp(n:int,dp:dict)->int:
     if n == 0 or n == 1:
         return n
     elif dp[n]!=-1:
         return dp[n]
     else:
-        dp[n] = fib(n-1,dp) + fib(n-2,dp)
+        dp[n] = fib_dp(n-1,dp) + fib_dp(n-2,dp)
         return dp[n]        
 
-n=950
+def fib(n):
+    if n == 0 or n == 1:
+        return n
+    return fib(n-1) + fib(n-2)    
+
+
+n=10
 dp = [-1]*(n+1)
-print(fib(n,dp))    
+for i in range(n+1):
+    print(i , " = ",fib_dp(i,dp))  
+print(fib(n))      
