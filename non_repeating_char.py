@@ -10,8 +10,8 @@ def non_repeating_char(arr: list,n: int) -> list:
 n=2
 arr=[1, 2, 3, 2, 1, 4]
 
-n=1
-arr=[1, 2, 3, 2, 1, 4]
+# n = 1
+# arr[] = {2, 1, 3, 2}
 
 print(*non_repeating_char(arr,n))
 
