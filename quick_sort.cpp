@@ -48,7 +48,7 @@ int main() {
     cout << endl;
     // int arr[]={1,9,8,3,4,83,3483,77,5414,87,987,7};
     // int n = sizeof(arr)/sizeof(arr[0])-1;
-    quick_sort(arr,0,n);
+    quick_sort(arr,0,n-1);
     for(i = 0;i<n;i++)
     {
         cout << arr[i] << " ";
