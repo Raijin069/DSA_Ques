@@ -3,7 +3,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 
-public class prob1
+public class file_handling_java
 {
     public static void main(String[] args){
 
