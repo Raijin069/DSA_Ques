@@ -1,20 +1,17 @@
 #include <iostream>
-#include <stack>
 #include <string>
+#include <stack>
 using namespace std;
 
-int prec(char c)
+int prec(char i)
 {
-    if(c=='^')
-    {
+    if (i=='^'){
         return 3;
     }
-    else if(c=='*'||c=='*')
-    {
+    else if (i=='*' || i=='/'){
         return 2;
     }
-    else if(c=='+' || c=='-')
-    {
+    else if (i=='+' || i=='-'){
         return 1;
     }
     else
@@ -24,21 +21,20 @@ int prec(char c)
 }
 
 string infix_to_postfix(string s)
-{
-    stack<char> st;
+{    
     string res;
-    int i;
-    for(i=0;i<s.length();i++)
+    stack<char> st;
+    for(char i:s)
     {
-        if((s[i]>='a' && s[i]<='z')||(s[i]>='A' && s[i]<='Z'))
+        if((i>='a' && i<='z') || (i>='A' && i<='Z'))
         {
-            res+=s[i];    
-        }    
-        else if(s[i]=='(')
-        {
-            st.push(s[i]);
+            res+=i;
         }
-        else if(s[i]==')')
+        else if(i=='(')
+        {
+            st.push(i);
+        }
+        else if(i==')')
         {
             while(!st.empty() && st.top()!='(')
             {
@@ -52,12 +48,12 @@ string infix_to_postfix(string s)
         }
         else
         {
-            while(!st.empty() && prec(st.top())>prec(s[i]))
+            while(!st.empty() && prec(st.top())>prec(i))
             {
                 res+=st.top();
                 st.pop();
-            }    
-            st.push(s[i]);   
+            }
+            st.push(i);
         }
     }
     while(!st.empty())
@@ -68,14 +64,10 @@ string infix_to_postfix(string s)
     return res;
 }
 
-int main()
-{
-    
-    // string s="A+B*C+D";
+int main(){
     string s;
-    cout << "Enter s: ";
+    cout << "enter infix: ";
     cin >> s;
-    cout << infix_to_postfix(s) << "\n";
+    cout << infix_to_postfix(s);
     return 0;
-
 }
